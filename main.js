@@ -55,11 +55,11 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
-const spaceTexture= new THREE.TextureLoader().load('./space.jpg');
+const spaceTexture= new THREE.TextureLoader().load('./dist/assets/images/space.jpg');
 scene.background= spaceTexture;
 
 // creating a 3d avatar of me
-const rohitTexture= new THREE.TextureLoader().load('./prof1.png');
+const rohitTexture= new THREE.TextureLoader().load('./dist/assets/images/prof1.png');
 
 const rohit= new THREE.Mesh(
   new THREE.BoxGeometry(3,3,3),

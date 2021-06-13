@@ -1,9 +1,11 @@
 @import url("https://use.typekit.net/jmk3xov.css");
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 canvas {
   position: fixed;
   top: 0;
   left: 0;
+  right:0;
 }
 
 
@@ -25,15 +27,32 @@ main {
   width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
-  
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
 
+h1 {
+  font-family: 'Hammersmith One', sans-serif;
+}
+
 h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
+  white-space: nowrap;
   font-weight: 700;
   font-style: normal;
+  transition: 0.5s;
+}
+
+h2:hover {
+  transform: scale(1.1);
+}
+
+h1:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to bottom, greenyellow, white);
+  color:transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 3px 3px 1px rgb(250, 113, 1);
 }
 
 canvas {
@@ -52,6 +71,26 @@ canvas {
     margin-bottom: var(--spacing);
   }
 
+  header >p {
+    transition: 0.5s;
+  }
+
+  header >p:hover {
+    transform: scale(1.1);
+    letter-spacing: 0.1rem;
+    text-decoration: underline wavy turquoise;
+    color: orangered;
+  }
+
+  header > h1:hover {
+    transform: scale(1.1);
+    background: white;
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 3px 3px 1px purple;
+  }
+
   section {
     grid-column: 2 / 8;
     padding: 1rem;
@@ -59,6 +98,54 @@ canvas {
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+  }
+
+  .tech {
+    background: linear-gradient(to right top, rgba(128, 0, 128, 0.7), rgba(0, 0, 0, 0.7),purple);
+  }
+
+  .tech > h2:hover {
+    background: linear-gradient(to top, rgb(235, 9, 235), rgb(60, 255, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 1px turquoise;
+  }
+
+  .about {
+    background: linear-gradient(to right top, rgba(128, 0, 128, 0.7),blue);
+  }
+
+  .about > h2:hover {
+    background: linear-gradient(to top, rgb(235, 9, 235), rgb(60, 255, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 1px turquoise;
+  }
+
+  .project {
+    background: linear-gradient(to right top, black,rgba(0, 0, 255, 0.438));
+  }
+
+  .project > h2:hover {
+    background: linear-gradient(to top, rgb(145, 9, 235), rgb(60, 255, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 1px turquoise;
+  }
+
+  .work {
+    background: linear-gradient(to bottom,rgb(221, 61, 61), rgba(128, 0, 128, 0.7),black);
+  }
+
+  .work > h2:hover {
+    background: linear-gradient(to top, rgb(235, 9, 235), rgb(60, 255, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 1px black;
   }
 
   blockquote {
@@ -74,8 +161,114 @@ canvas {
     font-size: 4rem;
     display: inline;
     line-height: 1;
+    transition: 0.5s;
+  }
+
+  blockquote p:hover {
+    transform: scale(1.1);
+    letter-spacing: 0.2rem;
+    color: white;
+    background-color: black;
   }
 
   .left {
     grid-column: 6 / 12;
+  }
+
+  .tech-stack > * {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin:0.5em 0;
+    gap:0.5em;
+  }
+
+  .tech-stack > li > svg {
+    transition: 0.5s;
+  }
+
+  .tech-stack > li > svg:hover {
+    transform:scale(1.1);
+    filter: grayscale(0.5);
+  }
+
+  .tech-stack > li > span {
+    transition: 0.5s;
+  }
+  .tech-stack > li > span:hover {
+    transform: scale(1.1);
+    letter-spacing: 0.2rem;
+  }
+
+  #mail,
+  #user-github,
+  #user-linkedin {
+    transition: 0.5s;
+  }
+
+  #mail:hover{
+    color: transparent;
+    background:white;
+    text-shadow: 2px 2px 1px orangered;
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: 0.2rem;
+  } 
+  #user-github:hover {
+    color: transparent;
+    background:white;
+    text-shadow: 2px 2px 1px purple;
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: 0.2rem;
+  }
+  #user-linkedin:hover {
+    color: transparent;
+    background:white;
+    text-shadow: 2px 2px 1px #0073b2;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  @media screen and (max-width:400px) {
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .tech-stack {
+      padding-right: 4em;
+    }
+
+    h1, h2, h3, blockquote {
+      white-space: normal;
+    }
+
+    section {
+      max-width: 15em;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    header {
+      padding:1em;
+      width: 100%;
+    }
+
+    header p {
+      font-size: 1.5rem;
+    }
+
+    blockquote p{
+      font-size: 2rem;
+    }
+
+    .contact>h1 {
+      font-size: 2rem;
+    }
   }

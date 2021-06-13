@@ -25,7 +25,7 @@ const geometry= new THREE.TorusGeometry( 10, 3, 16, 100 )
 const material= new THREE.MeshStandardMaterial( {color: 0xFF6347 });
 const torus= new THREE.Mesh( geometry, material );
 
-scene.add(torus)
+// scene.add(torus)
 
 const pointLight= new THREE.PointLight(0xffffff)
 pointLight.position.set(5,5,5)
@@ -55,11 +55,11 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
-const spaceTexture= new THREE.TextureLoader().load('space.jpg');
+const spaceTexture= new THREE.TextureLoader().load('./space.jpg');
 scene.background= spaceTexture;
 
 // creating a 3d avatar of me
-const rohitTexture= new THREE.TextureLoader().load('prof1.png');
+const rohitTexture= new THREE.TextureLoader().load('./prof1.png');
 
 const rohit= new THREE.Mesh(
   new THREE.BoxGeometry(3,3,3),
@@ -69,8 +69,8 @@ const rohit= new THREE.Mesh(
 scene.add(rohit);
 
 // moon
-const moonTexture= new THREE.TextureLoader().load('moon.jpg');
-const normalTexture= new THREE.TextureLoader().load('normal.jpg');
+const moonTexture= new THREE.TextureLoader().load('./moon.jpg');
+const normalTexture= new THREE.TextureLoader().load('./normal.jpg');
 
 const moon= new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),

@@ -55,45 +55,45 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
-const spaceTexture= new THREE.TextureLoader().load('./dist/assets/images/space.jpg');
-scene.background= spaceTexture;
+// const spaceTexture= new THREE.TextureLoader().load('./dist/assets/images/space.jpg');
+// scene.background= spaceTexture;
 
 // creating a 3d avatar of me
-const rohitTexture= new THREE.TextureLoader().load('./dist/assets/images/prof1.png');
+// const rohitTexture= new THREE.TextureLoader().load('./dist/assets/images/prof1.png');
 
-const rohit= new THREE.Mesh(
-  new THREE.BoxGeometry(3,3,3),
-  new THREE.MeshBasicMaterial({map: rohitTexture})
-);
+// const rohit= new THREE.Mesh(
+//   new THREE.BoxGeometry(3,3,3),
+//   new THREE.MeshBasicMaterial({map: rohitTexture})
+// );
 
-scene.add(rohit);
+// scene.add(rohit);
 
 // moon
-const moonTexture= new THREE.TextureLoader().load('./moon.jpg');
-const normalTexture= new THREE.TextureLoader().load('./normal.jpg');
+// const moonTexture= new THREE.TextureLoader().load('./moon.jpg');
+// const normalTexture= new THREE.TextureLoader().load('./normal.jpg');
 
-const moon= new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map:moonTexture,
-    normalMap: normalTexture
-  })
-)
+// const moon= new THREE.Mesh(
+//   new THREE.SphereGeometry(3, 32, 32),
+//   new THREE.MeshStandardMaterial({
+//     map:moonTexture,
+//     normalMap: normalTexture
+//   })
+// )
 
-scene.add(moon)
+// scene.add(moon)
 
-moon.position.z= 30;
-moon.position.setX(-10);
+// moon.position.z= 30;
+// moon.position.setX(-10);
 
 function moveCamera() {
 
   const t= document.body.getBoundingClientRect().top;
-  moon.rotation.x +=0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
+  // moon.rotation.x +=0.05;
+  // moon.rotation.y += 0.075;
+  // moon.rotation.z += 0.05;
 
-  rohit.rotation.y += 0.01;
-  rohit.rotation.z += 0.01;
+  // rohit.rotation.y += 0.01;
+  // rohit.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
